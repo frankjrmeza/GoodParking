@@ -1,35 +1,88 @@
-.contenedor{
-    width: 95%;
+.contenedor {
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
-.contenedor ul{
+
+.contenedor ul {
     padding: 0;
     display: flex;
     width: 400%;
-
     animation: slide 10s infinite alternate;
 }
-.contenedor li{
-    width: 150%;
+
+.contenedor li {
+    width: 100%;
     list-style: none;
 }
-.contenedor img{
-    width: 100%;
-    height: 60%;
+
+.contenedor img {
+    width: 1348px;
+    height: 500px;
 }
 
-@keyframes slide{
+.informacion {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #0575E6;
+    opacity: 0.8;
+}
 
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+.vision {
+    top: 50px;
+    position: relative;
+    left: 58%;
+    width: 500px;
+    height: 300px;
+    background: rgba(4, 59, 104, 0.986);
+    border-radius: 10px;
+    text-align: center;
+}
 
-    25%{margin-left: -100%;}
-    45%{margin-left: -100%;}
+.mision {
+    top: 50px;
+    position: absolute;
+    left: 5%;
+    width: 500px;
+    height: 300px;
+    background: rgba(4, 59, 104, 0.986);
+    border-radius: 10px;
+    text-align: center;
+}
 
-    50%{margin-left: -200%;}
-    70%{margin-left: -200%;}
 
-    75%{margin-left: -300%;}
-    100%{margin-left: -300%;}
+.mision h2{
+   margin: 20px;
+}
+
+.vision h2{
+    margin: 20px;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
 }

@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+    apiKey: "AIzaSyC6spH2CePbgU-vprX1H-sqJHbpM6NWgNs",
+    authDomain: "goodparking2.firebaseapp.com",
+    databaseURL: "https://goodparking2.firebaseio.com",
+    projectId: "goodparking2",
+    storageBucket: "",
+    messagingSenderId: "612430493373",
+    appId: "1:612430493373:web:89a293200c424e3738e9d4",
+    measurementId: "G-B1V99J6SXK"
+  }
 };
 
 /*

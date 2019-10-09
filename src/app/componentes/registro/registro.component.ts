@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import{ PersonaService} from '../../services/persona.service'
+import { NgForm } from '@angular/forms';
+import { Persona } from 'src/app/models/persona';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private personaservice: PersonaService) { }
 
   ngOnInit() {
   }
 
+  resetForm(productForm: NgForm){
+    if (productForm!=null){
+      productForm.reset();
+      this.personaservice.selecPersona=new Persona();
+    }
+  }
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
   <a class="navbar-brand d-flex" href="#">
     <img style="border-radius: 40%" src="../assets/img/LOGO.PNG" width="50" height="50">
     <h3 class="ml-3 mt-2">GOOD PARKING</h3>
@@ -10,34 +10,32 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item mr-2">
-        <a class="btn btn-outline-light" routerLink="/inicio" routerLinkActive="active" href="#">Inicio</a>
+        <a class="nav-item nav-link" routerLink="/inicio" routerLinkActive="active" href="#"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item mr-2">
-        <a class="btn btn-outline-light" routerLink="/login" routerLinkActive="active" href="#">Login</a>
+        <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active" href="#"><i class="fas fa-sign-out-alt"></i> Login</a>
       </li>
       <li class="nav-item mr-2">
-          <a class="btn btn-outline-light" routerLink="/registrarse" routerLinkActive="active" href="#">Registrarse</a>
-        </li>
-      <li class="nav-item mr-2">
-        <a class="btn btn-outline-light" routerLink="/contactanos" routerLinkActive="active" href="#">Contactanos</a>
+        <a class="nav-item nav-link" routerLink="/registrarse" routerLinkActive="active" href="#"><i class="fas fa-user-edit"></i> Registrarse</a>
+      </li>
+      <li class="nav-item mr-2" *ngIf="show">
+        <a class="nav-item nav-link" routerLink="/reserva" routerLinkActive="active" href="#"><i class="fas fa-calendar-check"></i> Reserva</a>
       </li>
       <li class="nav-item mr-2 dropdown">
-        <a class="btn btn-outline-light dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Parking Lot
-        </a>
+        <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-parking"></i> Parking Lot</a>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" routerLink="/parqueadero/mall-plaza" routerLinkActive="active" href="#">Mall
             Plaza</a>
           <a class="dropdown-item" routerLink="/parqueadero/caribe-plaza" routerLinkActive="active" href="#">Caribe
             Plaza</a>
-          <a class="dropdown-item" routerLink="/parqueadero/san-felipe" routerLinkActive="active" href="#">San
-            Felipe</a>
+          <a class="dropdown-item" routerLink="/parqueadero/plaza-bocagrande" routerLinkActive="active" href="#">Plaza
+            Bocagrande</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
-<div class="m-4" style="height: auto">
-<router-outlet></router-outlet>
+<div class="" style="height: auto">
+  <router-outlet></router-outlet>
 </div>

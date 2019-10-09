@@ -1,46 +1,23 @@
-<div class="contenedor p-3">
-    <form action="">
+<div class="contenedor">
+    <img src="../../../assets/img/fondo.jpg" alt="">
+    <form (submit)="iniciar(limpiar)">
+
         <div class="login-form">
             <h1 class="text-center mb-2">Login</h1>
             <br><br>
             <div class="form-group nombre">
-                <input type="text" name="nombre" id="nombre" class="" placeholder="Nombre">
+                <input type="text" name="usuario" id="usuario"  placeholder="Usuario" #limpiar>
             </div>
             <div class="form-group nombre mb-4">
-                    <input type="password" name="contraseña" class="" id="contraseña" placeholder="Contraseña">
-                </div>
-                <br><br>
-                <div>
-                    <button class="btnlog">Ingresar</button>
-                </div>
+             <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" #limpiar>
+            </div>
+            <br><br>
+            <div>
+                <button class="btnlog" (click)="ingresar()">Ingresar</button>
+            </div>
+            <br><br>
+            <a routerLink="/registrarse" routerLinkActive="active">Registrese</a>
+
         </div>
     </form>
 </div>
-<!-- <form class="login-form">
-    <h1>Iniciar Seccion</h1>
-
-    <div class="nombre">
-
-        <input type="text">
-        <span data-pleaceholder="Nombre"></span>
-
-    </div>
-
-    <div class="nombre">
-
-        <input type="password">
-        <span data-pleaceholder="Password"></span>
-
-    </div>
-
-    <input type="submit" class="btnlog" value="Inicar Seccion">
-
-    <div class="btn-text">
-
-        Regalame mil barras <a href="#">recuperar contraseña</a>
-
-    </div>
-
-</form> -->
-
-
