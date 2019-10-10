@@ -13,11 +13,16 @@ export class RegistroComponent implements OnInit {
   constructor(private personaservice: PersonaService) { }
 
   ngOnInit() {
+    this.personaservice.getPersonas()
   }
 
-  resetForm(productForm: NgForm){
-    if (productForm!=null){
-      productForm.reset();
+  onSubmit(regForm:NgForm){
+    this.personaservice.insertPersonas(regForm.value)
+    this.resetForm(regForm)
+  }
+  resetForm(regForm: NgForm){
+    if (regForm!=null){
+      regForm.reset();
       this.personaservice.selecPersona=new Persona();
     }
   }

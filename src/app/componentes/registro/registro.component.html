@@ -1,7 +1,7 @@
 <div class="contenedor">
     <img src="../../../assets/img/fondo.jpg" alt="">
 
-    <form >
+    <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
 
         <div class="login-form">
             <h1 class="text-center mb-2" id="titulo">Registro</h1>
@@ -12,8 +12,8 @@
                         <input 
                         type="text" 
                         name="nombre"
-                       
-                        
+                        #name="ngModel"
+                        [(ngModel)]="personaservice.selecPersona.name"
                         required 
                         placeholder="Nombre"
                         >
@@ -25,7 +25,6 @@
                          type="text"
                          name="apellido" 
                          
-                        
                          required 
                          placeholder="Apellido">
                     </div>
@@ -35,7 +34,6 @@
                         <input 
                         type="text"
                          name="usuario"
-                         
                         
                          required
                          placeholder="Usuario">
@@ -46,8 +44,7 @@
                         <input 
                         type="password" 
                         name="contraseña" 
-                        
-                        
+                       
                         required 
                         placeholder="Contraseña">
                     </div>
