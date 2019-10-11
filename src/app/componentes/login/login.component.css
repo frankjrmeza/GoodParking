@@ -10,6 +10,11 @@ img {
     margin-top: -25px;
 }
 
+.opacity{
+    opacity: 50%;
+    position:absolute;
+}
+
 .login-form {
     margin-top: 100px;
     width: 360px;

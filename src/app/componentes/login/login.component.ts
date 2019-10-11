@@ -22,7 +22,16 @@ export class LoginComponent implements OnInit {
   }
   ingresar() {
     this.app.show = true;
+    this.app.hide = false;
+    this.app.exit = true;
   }
+  
+  salir(){
+    this.app.exit = false;
+    this.app.hide = true;
+    this.app.show = false;
+  }
+  
   iniciar(limpiar) {
     
     limpiar.value = '';

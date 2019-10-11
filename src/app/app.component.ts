@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'GoodParking';
   show: boolean = false;
-
+  hide: boolean = true;
+  exit: boolean = false;
 }
+
+
