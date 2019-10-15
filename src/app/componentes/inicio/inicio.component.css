@@ -85,46 +85,57 @@
     font-size: 30px;
 }
 
-.frank img {
-    position: absolute;
-    margin: 0;
-    padding: 0;
+.contacto{
+    width: 100%;
+    height: 200px;
+    border: solid black;
+    top: 200px;
+    position: relative;
+}
+
+.contacto img {
+    position: relative;
+    margin-left: 65px;
+    padding: 10px;
     width: 200px;
     height: 200px;
     border-radius: 100px;
-    top: 500px;
     left: 100px;
 }
 
-.frank p {
-    position: absolute;
-    margin: 0;
+.contacto p {
+    width: 160px;
+    border: solid red;
+    position: relative;
+    margin:  0;
     padding: 0;
-    top: 730px;
-    left: 140px;
+    left: 190px;
     font-size: 20px;
-    color: white;
+    color:black;
 }
 
-.frank i {
-    position: absolute;
+.contacto i {
+    border: solid black;
+    position: relative;
     margin: 0;
     padding: 0;
-    top: 728px;
-    left: 110px;
+    top: 220px;
+    left: 160px;
     font-size: 25px;
 }
 
 .redes {
-    position: absolute;
-    top: 50px;
-    left: 30px;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    border: solid black;
 }
 
 .btn i {
     position: relative;
-    line-height: 20px;
+    line-height: 30px;
     font-size: 30px;
+    border: solid black;
 }
 
 @keyframes slide {

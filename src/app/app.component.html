@@ -26,7 +26,7 @@
             class="fas fa-calendar-check"></i> Reserva</a>
       </li>
       <li class="nav-item mr-2" *ngIf="exit">
-        <i class="fas fa-door-open"></i> <button class="btn btn-primary" (click)="salir()">Sign off</button> 
+        <a class="nav-item nav-link" routerLink="/inicio" routerLinkActive="active" href="#" (click)="salir()"><i class="fas fa-door-open"></i>sign off</a>
       </li>
       <li class="nav-item mr-2 dropdown">
         <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
