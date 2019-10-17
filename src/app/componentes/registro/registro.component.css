@@ -1,3 +1,37 @@
+/* background animado*/
+
+body{
+    
+    background-image: linear-gradient(125deg,#ffee00, #004e92, #007219, #002b50);
+    background-size: 300%; ;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    animation: bga 30s infinite;
+
+}
+
+@keyframes bga{
+
+    0%{
+        background-position: 0% 50%; 
+
+    }
+
+    50%{
+        background-position: 100% 50%; 
+        
+            }
+        
+    100%{
+            background-position: 50% 0%; 
+            
+            }
+} 
+
+/* ---------------------------------------------*/
+
+
 .contenedor {
     font-family: sans-serif;
     box-sizing: border-box;
