@@ -1,22 +1,28 @@
 <div class="contenedor">
-    <form (submit)="iniciar(limpiar)">
+    <img src="../../../assets/img/fondo.jpg" alt="" style="position: fixed;">
 
-        <div class="login-form">
-            <h1 class="text-center mb-2">Login</h1>
-            <br><br>
-            <div class="form-group nombre">
-                <input type="text" name="usuario" id="usuario"  placeholder="Usuario" #limpiar>
-            </div>
-            <div class="form-group nombre mb-4">
-             <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" #limpiar>
-            </div>
-            <br><br>
-            <div>
-                <button class="btnlog" (click)="ingresar()">Ingresar</button>
-            </div>
-            <br><br>
-            <a routerLink="/registrarse" routerLinkActive="active">Registrese</a>
-
+    <div class="card shadow mt-5">
+        <div class="card-header text-center">
+            Login
         </div>
-    </form>
+        <form (submit)="iniciar(limpiar)" autocomplete="off">
+            <div class="card-body">
+                <div class="form-group mt-4">
+                    <label for="user">User</label>
+                    <input type="text" id="user" class="form-control" #limpiar>
+                </div>
+                <div class="form-group mt-5">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" class="form-control" #limpiar>
+                </div>
+                <div class="from-group">
+                    <a routerLink="/registro" routerLinkActive="active" style="margin-left: 130px;" >Registrarse</a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button (click)="ingresar()" class="btn btn-primary btn-block">Sing In</button>
+            </div>
+        </form>
+    </div>
+
 </div>

@@ -1,105 +1,84 @@
 <div class="contenedor">
+    <img src="../../../assets/img/fondo2.jpg" alt="" style="position: fixed;">
 
-    <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
-
-        <div class="login-form">
-            <h1 class="text-center mb-2" id="titulo">Registro</h1>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group nombre">
-                        <input 
-                        type="text" 
-                        name="nombre"
-                        #name="ngModel"
-                        [(ngModel)]="personaservice.selecPersona.name"
-                        required 
-                        placeholder="Nombre"
-                        >
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group nombre">
-                        <input
-                         type="text"
-                         name="apellido" 
-                         
-                         required 
-                         placeholder="Apellido">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group nombre">
-                        <input 
-                        type="text"
-                         name="usuario"
-                        
-                         required
-                         placeholder="Usuario">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group nombre">
-                        <input 
-                        type="password" 
-                        name="contraseña" 
-                       
-                        required 
-                        placeholder="Contraseña">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group nombre">
-                        <input 
-                        type="email" 
-                        name="correo"
-                        
-                        
-                        required
-                        placeholder="Correo">
-                    </div>
-                </div>
-                <label class="col-md-12">Tipo de Vehiculo</label><br>
-                <div class="col-md-4">
-                    <input 
-                    class="form-check-input"
-                     id="carro"
-                     type="radio"
-                     name="vehiculo" 
-                     
-                     
-                     value="carro" 
-                     checked required>
-                    <label class="form-check-label" for="carro">Carro</label>
-                </div>
-                <div class="col-md-4">
-                    <input 
-                    class="form-check-input" 
-                    id="moto" 
-                    type="radio" 
-                    name="vehiculo" 
-                    
-                    
-                    value="moto">
-                    <label class="form-check-label" for="moto">Moto</label>
-                </div>
-                <div class="col-md-4">
-                    <input 
-                    class="form-check-input" 
-                    id="otros" 
-                    type="radio" 
-                    name="vehiculo" 
-                    
-                    
-                    value="otros">
-                    <label 
-                    class="form-check-label" for="otros">Otros</label>
-                </div>
-            </div>
-            <br><br>
-            <div>
-                <button class="btnlog" type="submit" (click)="resetForm(registroForm)">Ingresar</button>
-            </div>
+    <div class="card shadow" style="margin-top: 76px;">
+        <div class="card-header text-center">
+            Registrarse
         </div>
-    </form>
+        <form (submit)="iniciar(limpiar)" autocomplete="off">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="name">Name</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="l-name">Last Name</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="phone">Placa</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group mt-2">
+                            <label for="email">E-mail</label>
+                            <input type="correo" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="user">User</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="pass">Password</label>
+                            <input type="password" id="pass" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                            Carro
+                            </label>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Moto
+                            </label>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Otros
+                            </label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button (click)="ingresar()" class="btn btn-primary btn-block">check in</button>
+            </div>
+        </form>
+    </div>
 </div>

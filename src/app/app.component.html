@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark gradient fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark gradient fixed-top" id="navegation">
   <a class="navbar-brand d-flex" href="#">
     <img style="border-radius: 40%" src="../assets/img/LOGO.PNG" width="50" height="50">
     <h3 class="ml-3 mt-2">GOOD PARKING</h3>
@@ -19,14 +19,14 @@
       </li>
       <li class="nav-item mr-2" *ngIf="hide">
         <a class="nav-item nav-link" routerLink="/registrarse" routerLinkActive="active" href="#"><i
-            class="fas fa-user-edit"></i> Registrarse</a>
+            class="fas fa-user-edit"></i> check in</a>
       </li>
       <li class="nav-item mr-2" *ngIf="exit">
         <a class="nav-item nav-link" routerLink="/reserva" routerLinkActive="active" href="#"><i
-            class="fas fa-calendar-check"></i> Reserva</a>
+            class="fas fa-calendar-check"></i> Reserve</a>
       </li>
       <li class="nav-item mr-2" *ngIf="exit">
-        <a class="nav-item nav-link" routerLink="/inicio" routerLinkActive="active" href="#" (click)="salir()"><i class="fas fa-door-open"></i>sign off</a>
+        <a class="nav-item nav-link" href="#" (click)="salir()"><i class="fas fa-door-open"></i>sign off</a>
       </li>
       <li class="nav-item mr-2 dropdown">
         <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"

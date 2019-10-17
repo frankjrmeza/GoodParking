@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -11,7 +12,8 @@ declare var $: any;
 export class LoginComponent implements OnInit {
 
   constructor(
-    private app: AppComponent
+    private app: AppComponent,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -24,12 +26,14 @@ export class LoginComponent implements OnInit {
     this.app.show = true;
     this.app.hide = false;
     this.app.exit = true;
+    this.router.navigate(['/inicio']);
   }
   
   salir(){
     this.app.exit = false;
     this.app.hide = true;
     this.app.show = false;
+    this.router.navigate(['/inicio']);
   }
   
   iniciar(limpiar) {
