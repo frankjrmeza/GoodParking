@@ -1,1 +1,54 @@
-<p>registrar-admin works!</p>
+<div class="contenedor">
+    <img src="../../../assets/img/fondo2.jpg" alt="" style="position: fixed;">
+
+    <div class="card shadow mt-5">
+        <div class="card-header text-center">
+            Administrador
+        </div>
+        <form (submit)="iniciar(limpiar)" autocomplete="off">
+            <div class="card-body" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="l-name">Apellido</label>
+                            <input type="text" id="last-name" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="phone">Usuario</label>
+                            <input type="text" id="phone" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="phone">Contraseña</label>
+                            <input type="text" id="placa" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="email">E-mail</label>
+                            <input type="correo" id="email" class="form-control" #limpiar>
+                        </div>
+                    </div> 
+                    <div class="col-md-6">
+                        <div class="form-group mt-2">
+                            <label for="pass">Telefono</label>
+                            <input type="password" id="pass" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button (click)="ingresar()" class="btn btn-primary btn-block">Sign up</button>
+            </div>
+        </form>
+    </div>
+</div>
