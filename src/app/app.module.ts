@@ -6,10 +6,6 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ReservaComponent } from './componentes/reserva/reserva.component';
-import { MallPlazaComponent } from './componentes/parqueaderos/mall-plaza/mall-plaza.component';
-import { CaribePlazaComponent } from './componentes/parqueaderos/caribe-plaza/caribe-plaza.component';
-
-import { PlazaBocagrandeComponent } from './componentes/parqueaderos/plaza-bocagrande/plaza-bocagrande.component';
 //firebase
 import{AngularFireDatabaseModule } from 'angularfire2/database';
 import{ AngularFireModule} from 'angularfire2';
@@ -29,9 +25,6 @@ import{CupoService} from './services/cupo.service';
     LoginComponent,
     ReservaComponent,
     RegistroComponent,
-    MallPlazaComponent,
-    CaribePlazaComponent,
-    PlazaBocagrandeComponent,
     CuposComponent,
     ListCuposComponent,
     CupoComponent
