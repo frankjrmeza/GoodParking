@@ -13,8 +13,6 @@ import {environment} from '../environments/environment';
 import { FormsModule} from '@angular/forms'
 //componentes
 import { CuposComponent } from './componentes/cupos/cupos.component';
-import { ListCuposComponent } from './componentes/cupos/list-cupos/list-cupos.component';
-import { CupoComponent } from './componentes/cupos/cupo/cupo.component'
 //servicios
 import{CupoService} from './services/cupo.service';
 import { RegistrarParqueaderoComponent } from './componentes/registrar-parqueadero/registrar-parqueadero.component';
@@ -28,8 +26,6 @@ import { RegistrarAdminComponent } from './componentes/registrar-admin/registrar
     ReservaComponent,
     RegistroComponent,
     CuposComponent,
-    ListCuposComponent,
-    CupoComponent,
     RegistrarParqueaderoComponent,
     RegistrarAdminComponent
     
