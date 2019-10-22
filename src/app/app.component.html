@@ -17,10 +17,7 @@
         <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active" href="#"><i
             class="fas fa-sign-out-alt"></i> Login</a>
       </li>
-      <li class="nav-item mr-2" *ngIf="hide">
-        <a class="nav-item nav-link" routerLink="/registrarse" routerLinkActive="active" href="#"><i
-            class="fas fa-user-edit"></i> Sign up</a>
-      </li>
+      
       <li class="nav-item mr-2" *ngIf="show">
         <a class="nav-item nav-link" routerLink="/reserva" routerLinkActive="active" href="#"><i
             class="fas fa-calendar-check"></i> Reserve</a>
@@ -30,15 +27,10 @@
       </li>
       <li class="nav-item mr-2 dropdown">
         <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-parking"></i> Parking
-          Lot</a>
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-parking"></i> Sign up</a>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/parqueadero/mall-plaza" routerLinkActive="active" href="#">Mall
-            Plaza</a>
-          <a class="dropdown-item" routerLink="/parqueadero/caribe-plaza" routerLinkActive="active" href="#">Caribe
-            Plaza</a>
-          <a class="dropdown-item" routerLink="/parqueadero/plaza-bocagrande" routerLinkActive="active" href="#">Plaza
-            Bocagrande</a>
+          <a class="dropdown-item" routerLink="/parqueadero/mall-plaza" routerLinkActive="active" href="#">Cliente</a>
+          <a class="dropdown-item" routerLink="/parqueadero/caribe-plaza" routerLinkActive="active" href="#">Parqueadero</a>
         </div>
       </li>
     </ul>
