@@ -1,4 +1,68 @@
-<div style="margin-top: 76px;">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem dignissimos delectus dolores deleniti quis eius fugiat aspernatur voluptas provident natus doloribus est nam fuga aut minus commodi et, quo rerum.</p>
+<div class="mapa" style="margin-top: 76px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0762328287346!2d-75.53051628588618!3d10.415520168601121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f7daf355b19%3A0x153e23e9b662f346!2sCENTRO%20COMERCIAL%20CARIBE%20PLAZA!5e0!3m2!1ses!2sco!4v1571345559011!5m2!1ses!2sco"
+                width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 </div>
+<div class="gradient row mt-5">
+        <div class="col-md-5 card shadow  mt-5 mb-2 m-5 ">
+                <div class="card-header text-center">
+                        Reservar Cupo
+                </div>
+                <form (submit)="iniciar(limpiar)" autocomplete="off">
+                        <div class="card-body">
+                                <div class="row">
+                                        <div class="col-md-12">
+                                                <div class="form-group mt-2">
+                                                        <label for="name">Nombre del parqueadero</label>
+                                                        <input type="text" id="name" class="form-control" #limpiar>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="form-group mt-2">
+                                                        <label for="phone">Placa del vehiculo</label>
+                                                        <input type="text" id="placa" class="form-control" #limpiar>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="form-group mt-2">
+                                                        <label for="user">Tiempo de Reseva</label>
+                                                        <input type="text" id="tiempo" class="form-control" #limpiar>
+                                                </div>
+                                        </div>
 
+                                </div>
+                        </div>
+                        <div class="card-footer">
+                                <button class="btn btn-primary btn-block">Reservar</button>
+                        </div>
+                </form>
+        </div>
+
+        <div class="col-md-5 mt-5 mb-4 m-1">
+                <table class="table-bordered table-primary mb-2">
+                        <thead>
+                                <tr style="text-align: center;">
+                                        <th colspan="5">Parqueaderos Registrados</th>
+                                </tr>
+                        </thead>
+                        <thead>
+                                <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Direccion</th>
+                                        <th scope="col">Cupos Disponbles</th>
+                                        <th scope="col">Precio por Hora</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <th scope="row">1</th>
+                                        <td>Caribe Plaza</td>
+                                        <td>San Andresito</td>
+                                        <td>20</td>
+                                        <td>2.000</td>
+                                </tr>
+                        </tbody>
+                </table>
+        </div>
+
+</div>

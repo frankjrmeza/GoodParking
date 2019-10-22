@@ -3,11 +3,12 @@
     margin: auto;
     overflow: hidden;
 }
-.continer{
+
+.continer {
     margin-top: 76px;
 }
 
-.img-header{
+.img-header {
     background-image: url(../../../../assets/img/mall-plaza/mall-P.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,18 +30,18 @@
 img {
     margin: 0;
     padding: 0;
-    width:500px;
+    width: 500px;
     height: 300px;
     border-radius: 20px;
-    position:relative;
+    position: relative;
 }
 
 .gradient {
-    background: #0f0c29;
+    background: #0575E6;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #021B79, #0575E6);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -57,7 +58,7 @@ img {
     display: inline-block;
     margin: 5px;
     border-radius: 30px;
-    box-shadow: 10px 10px 5px -5px #00000070;
+    /* box-shadow: 5px 10px 5px -5px #00000070; */
     color: #fff;
     overflow: hidden;
     position: relative;
