@@ -17,6 +17,8 @@ import { ListCuposComponent } from './componentes/cupos/list-cupos/list-cupos.co
 import { CupoComponent } from './componentes/cupos/cupo/cupo.component'
 //servicios
 import{CupoService} from './services/cupo.service';
+import { RegistrarParqueaderoComponent } from './componentes/registrar-parqueadero/registrar-parqueadero.component';
+import { RegistrarAdminComponent } from './componentes/registrar-admin/registrar-admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import{CupoService} from './services/cupo.service';
     RegistroComponent,
     CuposComponent,
     ListCuposComponent,
-    CupoComponent
+    CupoComponent,
+    RegistrarParqueaderoComponent,
+    RegistrarAdminComponent
     
   ],
   imports: [
