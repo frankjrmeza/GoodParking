@@ -1,46 +1,43 @@
-
-
-<body>
 <div class="contenedor">
     <img src="../../../assets/img/fondo2.jpg" alt="" style="position: fixed;">
 
-    <div class="card shadow" style="margin-top: 76px;">
+    <div class="card shadow mb-3" style="margin-top: 76px;">
         <div class="card-header text-center">
             Registrarse
         </div>
         <form (submit)="iniciar(limpiar)" autocomplete="off">
-            <div class="card-body">
+            <div class="card-body" >
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mt-2">
                             <label for="name">Name</label>
-                            <input type="text" id="user" class="form-control" #limpiar>
+                            <input type="text" id="name" class="form-control" #limpiar>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mt-2">
                             <label for="l-name">Last Name</label>
-                            <input type="text" id="user" class="form-control" #limpiar>
+                            <input type="text" id="last-name" class="form-control" #limpiar>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mt-2">
                             <label for="phone">Phone</label>
-                            <input type="text" id="user" class="form-control" #limpiar>
+                            <input type="text" id="phone" class="form-control" #limpiar>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mt-2">
-                            <label for="phone">Placa</label>
-                            <input type="text" id="user" class="form-control" #limpiar>
+                            <label for="phone">Placa del vehiculo</label>
+                            <input type="text" id="placa" class="form-control" #limpiar>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group mt-2">
                             <label for="email">E-mail</label>
-                            <input type="correo" id="user" class="form-control" #limpiar>
+                            <input type="correo" id="email" class="form-control" #limpiar>
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-md-6">
                         <div class="form-group mt-2">
                             <label for="user">User</label>
@@ -55,32 +52,35 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
                             <label class="form-check-label" for="exampleRadios1">
-                            Carro
+                                Carro
                             </label>
-                          </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
                             <label class="form-check-label" for="exampleRadios2">
-                            Moto
+                                Moto
                             </label>
-                          </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
                             <label class="form-check-label" for="exampleRadios3">
-                            Otros
+                                Otros
                             </label>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-footer">
-                <button (click)="ingresar()" class="btn btn-primary btn-block">check in</button>
+                <button (click)="ingresar()" class="btn btn-primary btn-block">Sign up</button>
             </div>
         </form>
     </div>
