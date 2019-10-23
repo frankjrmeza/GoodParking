@@ -5,24 +5,53 @@
         <div class=" mt-3 text-center" style="font-size: 30px;">
             Login
         </div>
+
         <form (submit)="iniciar(limpiar)" autocomplete="off">
             <div class="card-body">
-                <div class="form-group mt-4">
-                    <label for="user">Usuario</label>
-                    <input type="text" id="user" class="form-control" #limpiar>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mt-4 ">
+                            <label for="user">Usuario</label>
+                            <input type="text" id="user" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group mt-4 ">
+                            <label for="pass">Contraseña</label>
+                            <input type="password" id="pass" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Administrador</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Usuario</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group mt-5">
-                    <label for="pass">Contraseña</label>
-                    <input type="password" id="pass" class="form-control" #limpiar>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mt-4">
+                            <button (click)="ingresar()" class="btn btn-primary btn-block">Iniciar Seccion</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="from-group text-center">
+                            <a routerLink="/registrarse" routerLinkActive="active">Registrarse</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <button (click)="ingresar()" class="btn btn-primary btn-block">Iniciar Seccion</button>
-            </div>
-            <div class="from-group text-center">
-                <a routerLink="/registrarse" routerLinkActive="active">Registrarse</a>
-            </div>
+
         </form>
+
     </div>
 
 </div>
