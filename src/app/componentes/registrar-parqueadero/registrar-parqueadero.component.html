@@ -1,1 +1,21 @@
-<p>registrar-parqueadero works!</p>
+<div class="container" style="margin-top: 100px;">
+    <p style="font-size:30px; text-align: center;">Registre su Parqueadero Aqui</p>
+
+    <div class="card mt-5">
+        <div class="card-header" style="text-align: center;">
+            Detalles Del parqueadero
+        </div>
+        <form (submit)="iniciar(limpiar)" autocomplete="off">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mt2">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control" #limpiar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
