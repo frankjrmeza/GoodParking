@@ -10,6 +10,7 @@ export class AppComponent {
   show: boolean = false;
   hide: boolean = true;
   exit: boolean = false;
+  oculto: boolean = true;
 }
 
 

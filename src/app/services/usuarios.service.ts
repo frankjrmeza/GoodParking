@@ -11,7 +11,7 @@ export class UsuariosService {
   selectedPersona: Usuarios;
   usuarios: Usuarios[];
 
-  readonly url='http://localhost:8090/app/persona';
+  readonly url='http://localhost:8090/app/Usuarios';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor( private http: HttpClient ) {
@@ -28,12 +28,12 @@ export class UsuariosService {
     return this.http.get<Usuarios>(`${this.url}/${id}`);
   }
 
-  createPersona(persona: Usuarios): Observable<Usuarios> {
-    return this.http.post<Usuarios>(this.url, persona, {headers: this.httpHeaders});
+  createPersona(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.post<Usuarios>(this.url, usuario, {headers: this.httpHeaders});
   }
 
-  updatePersona(persona: Usuarios): Observable<Usuarios> {
-    return this.http.put<Usuarios>(this.url, persona, {headers: this.httpHeaders});
+  updatePersona(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(this.url, usuario, {headers: this.httpHeaders});
   }
 
   deletePersona(id: number): Observable<Usuarios> {
