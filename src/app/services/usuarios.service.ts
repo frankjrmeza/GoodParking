@@ -11,32 +11,32 @@ export class UsuariosService {
   selectedPersona: Usuarios;
   usuarios: Usuarios[];
 
-  readonly url='http://localhost:8090/app/Usuarios';
+  readonly url='http://localhost:8090/app/Usuario';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor( private http: HttpClient ) {
     console.log('Servicio Funcionando');
   }
 
-  getPersonas(): Observable<Usuarios[]> {
+  getUsuarios(): Observable<Usuarios[]> {
     return this.http.get(this.url).pipe(
       map(data => data as Usuarios[])
     );
   }
 
-  getPersona(id: number): Observable<Usuarios> {
+  getUsuario(id: number): Observable<Usuarios> {
     return this.http.get<Usuarios>(`${this.url}/${id}`);
   }
 
-  createPersona(usuario: Usuarios): Observable<Usuarios> {
+  createUsuario(usuario: Usuarios): Observable<Usuarios> {
     return this.http.post<Usuarios>(this.url, usuario, {headers: this.httpHeaders});
   }
 
-  updatePersona(usuario: Usuarios): Observable<Usuarios> {
+  updateUsuario(usuario: Usuarios): Observable<Usuarios> {
     return this.http.put<Usuarios>(this.url, usuario, {headers: this.httpHeaders});
   }
 
-  deletePersona(id: number): Observable<Usuarios> {
+  deleteUsuario(id: number): Observable<Usuarios> {
     return this.http.delete<Usuarios>(`${this.url}/${id}`, {headers: this.httpHeaders});
   }
 }

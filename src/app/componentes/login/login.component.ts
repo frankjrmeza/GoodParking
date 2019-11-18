@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+import { Usuarios } from 'src/app/Models/usuarios';
+import { Administradores } from 'src/app/models/administradores';
+import { AdministradoresService } from 'src/app/services/administradores.service';
 
 declare var $: any;
 
@@ -10,10 +16,15 @@ declare var $: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  public formLogin: FormGroup;
+  listaUsuarios: Usuarios[];
+  listaAdministradores: Administradores[];
   constructor(
-    private app: AppComponent,
-    public router: Router
+    private router: Router,
+    private loginservice: AuthenticationService,
+    private formBuilder: FormBuilder,
+    private service: UsuariosService,
+    private serviceAdmin: AdministradoresService
   ) { }
 
   ngOnInit() {
@@ -21,24 +32,57 @@ export class LoginComponent implements OnInit {
       if ($(this).val() == "")
         $(this).addClass('focus');
     });
+    this.formLogin = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      tipo: ['', Validators.required]
+    });
+    this.service.getUsuarios()
+      .subscribe(data =>
+        this.listaUsuarios = data
+      );
+    this.serviceAdmin.getAdministradores()
+      .subscribe(data =>
+        this.listaAdministradores = data
+      );
+
+    if (sessionStorage.getItem("username") !== null) {
+      if (sessionStorage.getItem("tipo") === 'Usuario') {
+        this.router.navigateByUrl('/reserva');
+      } else {
+        this.router.navigateByUrl('/registrarparqueadero');
+      }
+
+    }
   }
-  ingresar() {
-    this.app.show = true;
-    this.app.hide = false;
-    this.app.exit = true;
-    this.router.navigate(['/inicio']);
+
+  checkLogin() {
+    if (this.formLogin.value.tipo === 'Usuario') {
+      this.listaUsuarios.forEach(user => {
+        if (this.formLogin.value.username === user.usuario && this.formLogin.value.password === user.contraseña) {
+
+          sessionStorage.setItem('username', this.formLogin.value.username);
+          sessionStorage.setItem('tipo', "Usuario");
+          window.location.reload();
+        } else {
+          return false;
+        }
+      });
+
+    } else {
+      this.listaAdministradores.forEach(user => {
+        if (this.formLogin.value.username === user.usuario && this.formLogin.value.password === user.contraseña) {
+
+          sessionStorage.setItem('username', this.formLogin.value.username);
+          sessionStorage.setItem('tipo', "Administrador");
+          window.location.reload();
+        } else {
+          return false;
+        }
+      });
+
+    }
+
   }
-  
-  salir(){
-    this.app.exit = false;
-    this.app.hide = true;
-    this.app.show = false;
-    this.router.navigate(['/inicio']);
-  }
-  
-  iniciar(limpiar) {
-    limpiar.value = '';
-    return false;
-    
-  }
+
 }

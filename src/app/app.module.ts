@@ -14,7 +14,8 @@ import { RegistrarAdminComponent } from './componentes/registrar-admin/registrar
 import{AngularFireDatabaseModule } from 'angularfire2/database';
 import{ AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
-import { FormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule}from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 //servicios
 import { UsuariosService } from './services/usuarios.service'
 
@@ -36,7 +37,9 @@ import { UsuariosService } from './services/usuarios.service'
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UsuariosService

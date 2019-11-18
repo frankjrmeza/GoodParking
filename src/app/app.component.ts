@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,15 @@ export class AppComponent {
   hide: boolean = true;
   exit: boolean = false;
   oculto: boolean = true;
+
+  constructor(private loginService: AuthenticationService,private router: Router){
+
+  }
+
+  logOut(){
+    this.loginService.logOut();
+    this.router.navigate(['inicio']);
+  }
 }
 
 
