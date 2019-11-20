@@ -1,11 +1,11 @@
 export class Usuarios {
 
-    constructor(id = 0, nombre = '', apellido = '', usuario = '', contraseña = '', correo = '', telefono = '', placaVehiculo = '', tipoVehiculo = '') {
+    constructor(id = '', nombre = '', apellido = '', usuario = '', contraseña = '', correo = '', telefono = '', placaVehiculo = '', tipoVehiculo = '') {
 
     }
 
 
-    id: Number;
+    id: String;
     nombre: String;
     apellido: String;
     usuario: String;
