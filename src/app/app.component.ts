@@ -9,10 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'GoodParking';
-  show: boolean = false;
-  hide: boolean = true;
-  exit: boolean = false;
-  oculto: boolean = true;
 
   constructor(private loginService: AuthenticationService,private router: Router){
 

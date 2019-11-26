@@ -11,12 +11,13 @@ export class AuthenticationService {
   constructor(private service: UsuariosService) { }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
+    let user = localStorage.getItem('username')
     return !(user === null)
   }
 
   logOut() {
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('tipo');
+    localStorage.removeItem('username');
+    localStorage.removeItem('tipo');
+    localStorage.removeItem('placaPechera');
   }
 }

@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
         this.listaAdministradores = data
       );
 
-    if (sessionStorage.getItem("username") !== null) {
-      if (sessionStorage.getItem("tipo") === 'Usuario') {
+    if (localStorage.getItem("username") !== null) {
+      if (localStorage.getItem("tipo") === 'Usuario') {
         this.router.navigateByUrl('/reserva');
       } else {
         this.router.navigateByUrl('/registrarparqueadero');
@@ -61,8 +61,9 @@ export class LoginComponent implements OnInit {
       this.listaUsuarios.forEach(user => {
         if (this.formLogin.value.username === user.usuario && this.formLogin.value.password === user.contraseña) {
 
-          sessionStorage.setItem('username', this.formLogin.value.username);
-          sessionStorage.setItem('tipo', "Usuario");
+          localStorage.setItem('username', this.formLogin.value.username);
+          localStorage.setItem('tipo', "Usuario");
+          localStorage.setItem('placaPechera', user.placaVehiculo);
           window.location.reload();
         } else {
           return false;
@@ -73,8 +74,8 @@ export class LoginComponent implements OnInit {
       this.listaAdministradores.forEach(user => {
         if (this.formLogin.value.username === user.usuario && this.formLogin.value.password === user.contraseña) {
 
-          sessionStorage.setItem('username', this.formLogin.value.username);
-          sessionStorage.setItem('tipo', "Administrador");
+          localStorage.setItem('username', this.formLogin.value.username);
+          localStorage.setItem('tipo', "Administrador");
           window.location.reload();
         } else {
           return false;

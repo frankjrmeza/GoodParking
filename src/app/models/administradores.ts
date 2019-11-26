@@ -4,14 +4,13 @@ export class Administradores {
 
     }
 
-
-    id: String;
-    nombre: String;
-    apellido: String;
-    usuario: String;
-    contraseña: String;
-    correo: String;
-    telefono: String;
+    id: string;
+    nombre: string;
+    apellido: string;
+    usuario: string;
+    contraseña: string;
+    correo: string;
+    telefono: string;
 
 
 }

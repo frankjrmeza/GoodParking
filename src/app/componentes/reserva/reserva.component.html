@@ -4,66 +4,58 @@
 </div>
 <div class="gradient row mt-5 p-3">
         <div class="col-md-5">
-                <div class="card shadow"> 
+                <div class="card shadow">
 
-                <div class="card-header text-center">
-                        Reservar Cupo
-                </div>
-                <form (submit)="iniciar(limpiar)" autocomplete="off">
-                        <div class="card-body">
-                                <div class="row">
-                                        <div class="col-md-12">
-                                                <div class="form-group mt-2">
-                                                        <label for="name">Nombre del parqueadero</label>
-                                                        <input type="text" id="name" class="form-control" #limpiar>
+                        <div class="card-header text-center">
+                                Reservar Cupo
+                        </div>
+                        <form [formGroup]="formReserva" (ngSubmit)="Reservar()" autocomplete="off">
+                                <div class="card-body">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <div class="form-group mt-2">
+                                                                <label for="name">Seleccione el parqueadero</label>
+                                                                <select id="name" formControlName="nombreP" class="form-control">
+                                                                        <option *ngFor="let pa of listParqueaderos" value="{{pa.nombreP}}">{{pa.nombreP}}</option>
+                                                                </select>
+                                                        </div>
                                                 </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                                <div class="form-group mt-2">
-                                                        <label for="user">Tiempo de Reseva</label>
-                                                        <input type="text" id="tiempo" class="form-control" #limpiar>
+                                                <div class="col-md-12">
+                                                        <div class="form-group mt-2">
+                                                                <label for="user">Tiempo de Reseva</label>
+                                                                <input type="text" id="tiempo" class="form-control"
+                                                                        formControlName="tiempoReserva">
+                                                        </div>
                                                 </div>
-                                        </div>
 
+                                        </div>
                                 </div>
-                        </div>
-                        <div class="card-footer">
-                                <button class="btn btn-primary btn-block">Reservar</button>
-                        </div>
-                </form>
-                
-        </div>
+                                <div class="card-footer">
+                                        <button class="btn btn-primary btn-block">Reservar</button>
+                                </div>
+                        </form>
+
+                </div>
         </div>
 
         <div class="col-md-7">
                 <div class="card p-2">
-                        <table class="table table-bordered table-info bg-dark mb-2" style="color: #fff;">
-                                <thead>
-                                        <tr style="text-align: center;">
-                                                <th colspan="6">Parqueaderos Registrados</th>
-                                        </tr>
-                                </thead>
-                                <thead>
-                                        <tr>
-                                                <th scope="col">Id</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Direccion</th>
-                                                <th scope="col">Cupos Disponbles</th>
-                                                <th scope="col">Precio por Hora</th>
-                                                <th scope="col">Telefono</th>
-                                        </tr>
+                        <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <th>Nombre</th>
+                                    <th>Dirección</th>
+                                    <th>Cupos</th>
+                                    <th>Precio</th>
                                 </thead>
                                 <tbody>
-                                        <tr>
-                                                <th scope="row">1</th>
-                                                <td>Caribe Plaza</td>
-                                                <td>San Andresito</td>
-                                                <td>20</td>
-                                                <td>2.000</td>
-                                                <td>3127884178</td>
-                                        </tr>
+                                    <tr *ngFor="let p of listParqueaderos">
+                                        <td>{{ p.nombreP }}</td>
+                                        <td>{{ p.direccion }}</td>
+                                        <td>{{ p.cupos }}</td>
+                                        <td>${{ p.precio }} / hora</td>
+                                    </tr>
                                 </tbody>
-                        </table>
+                            </table>
                 </div>
 
         </div>

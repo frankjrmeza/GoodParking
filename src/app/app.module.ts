@@ -10,14 +10,10 @@ import { ReservaComponent } from './componentes/reserva/reserva.component';
 import { CuposComponent } from './componentes/cupos/cupos.component';
 import { RegistrarParqueaderoComponent } from './componentes/registrar-parqueadero/registrar-parqueadero.component';
 import { RegistrarAdminComponent } from './componentes/registrar-admin/registrar-admin.component';
-//firebase
-import{AngularFireDatabaseModule } from 'angularfire2/database';
-import{ AngularFireModule} from 'angularfire2';
-import {environment} from '../environments/environment';
 import { FormsModule, ReactiveFormsModule}from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //servicios
-import { UsuariosService } from './services/usuarios.service'
+import { UsuariosService } from './services/usuarios.service';
 
 
 @NgModule({
@@ -35,8 +31,6 @@ import { UsuariosService } from './services/usuarios.service'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule

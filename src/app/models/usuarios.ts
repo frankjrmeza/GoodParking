@@ -5,15 +5,15 @@ export class Usuarios {
     }
 
 
-    id: String;
-    nombre: String;
-    apellido: String;
-    usuario: String;
-    contraseña: String;
-    correo: String;
-    telefono: String;
-    placaVehiculo: String;
-    tipoVehiculo: String;
+    id: string;
+    nombre: string;
+    apellido: string;
+    usuario: string;
+    contraseña: string;
+    correo: string;
+    telefono: string;
+    placaVehiculo: string;
+    tipoVehiculo: string;
 
 
 }

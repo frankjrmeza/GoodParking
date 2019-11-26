@@ -13,10 +13,10 @@
         <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active" href="#"><i
             class="fas fa-sign-out-alt"></i> Login</a>
       </li>
-      <li class="nav-item mr-2" *ngIf="ocultar">
+      <li class="nav-item mr-2" *ngIf="loginService.isUserLoggedIn() && showAdmin">
         <a class="nav-item nav-link" routerLink="/registrarparqueadero" routerLinkActive="active" href="#"><i class="fas fa-parking"></i> Registrar Parking</a>
       </li>
-      <li class="nav-item mr-2" *ngIf="loginService.isUserLoggedIn()">
+      <li class="nav-item mr-2" *ngIf="loginService.isUserLoggedIn() && showUser">
         <a class="nav-item nav-link" routerLink="/reserva" routerLinkActive="active" href="#"><i
             class="fas fa-calendar-check"></i> Reserve</a>
       </li>
