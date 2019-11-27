@@ -7,6 +7,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Usuarios } from 'src/app/Models/usuarios';
 import { Administradores } from 'src/app/models/administradores';
 import { AdministradoresService } from 'src/app/services/administradores.service';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -57,6 +58,13 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
+      if (this.formLogin.value.username === '' || this.formLogin.value.password === '') {
+        Swal.fire(
+            'Error!',
+            'Complete todos los campos',
+            'error'
+        )
+    }else{
     if (this.formLogin.value.tipo === 'Usuario') {
       this.listaUsuarios.forEach(user => {
         if (this.formLogin.value.username === user.usuario && this.formLogin.value.password === user.contraseña) {
@@ -83,7 +91,7 @@ export class LoginComponent implements OnInit {
       });
 
     }
-
+  }
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ParqueaderoService } from 'src/app/services/parqueadero.service';
 import { Parqueadero } from 'src/app/models/parqueadero';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-registrar-parqueadero',
@@ -11,9 +12,9 @@ import { Parqueadero } from 'src/app/models/parqueadero';
 export class RegistrarParqueaderoComponent implements OnInit {
 
   public formRegistro: FormGroup;
+  public formEdit: FormGroup;
   
-  showUser: boolean;
-  showAdmin: boolean;
+  user = ''
 
   listParqueaderos: Parqueadero[];
 
@@ -29,14 +30,22 @@ export class RegistrarParqueaderoComponent implements OnInit {
       precio: ['', Validators.required]
     });
 
-    let tipo = localStorage.getItem("tipo");
-    console.log(tipo)
-    if(tipo === 'Administrador'){
-      this.showAdmin = true;
-      this.showUser = false;
-    }
+    this.formEdit = this.formBuilder.group({
+      idParqueadero: [],
+      nombreP: ['', Validators.required],
+      direccion: ['', Validators.required],
+      correo: ['', Validators.required],
+      telefono: ['', Validators.required],
+      cupos: ['', Validators.required],
+      precio: ['', Validators.required],
+      dueno: ['', Validators.required]
+    });
+
+    this.user = localStorage.getItem("username");
 
     this.getParqueaderos();
+
+    
 
   }
 
@@ -47,10 +56,28 @@ export class RegistrarParqueaderoComponent implements OnInit {
   }
 
   registrarParqueadero(){
+    this.formRegistro.value.dueno = this.user;
     this.service.createParquedero(this.formRegistro.value).subscribe(data => {
       console.log(data)
       this.getParqueaderos();
       this.formRegistro.reset();
+    });
+  }
+
+  editar(p: Parqueadero){
+    this.service.selectedParqueadero = p;
+    this.formEdit.setValue(this.service.selectedParqueadero);
+  }
+
+  modificarParqueadero(){
+    this.service.updateParqueadero(this.formEdit.value).subscribe(data => {
+      Swal.fire(
+        'Correcto!',
+        'Parqueadero modificado correctamente',
+        'success'
+    )
+      this.getParqueaderos();
+      this.formEdit.reset();
     });
   }
 

@@ -47,7 +47,8 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <button type="submit" class="btn btn-outline-primary btn-block">Registrar Parqueadero</button>
+                            <button type="submit" class="btn btn-outline-primary btn-block">Registrar
+                                Parqueadero</button>
                         </div>
                     </div>
                 </div>
@@ -58,36 +59,116 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tus parqueaderos</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tus parqueaderos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-border">
+                    <thead class="thead-dark">
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Cupos</th>
+                        <th>Precio</th>
+                        <th>Editar</th>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let p of listParqueaderos">
+                            <tr *ngIf="p.dueno === user">
+                                <td>{{ p.nombreP }}</td>
+                                <td>{{ p.direccion }}</td>
+                                <td>{{ p.cupos }}</td>
+                                <td>${{ p.precio }} / hora</td>
+                                <td><button (click)="editar(p)" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal2">Editar</button></td>
+
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <table class="table table-border">
-              <thead class="thead-dark">
-                  <th>Nombre</th>
-                  <th>Dirección</th>
-                  <th>Cupos</th>
-                  <th>Precio</th>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let p of listParqueaderos">
-                      <td>{{ p.nombreP }}</td>
-                      <td>{{ p.direccion }}</td>
-                      <td>{{ p.cupos }}</td>
-                      <td>${{ p.precio }} / hora</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form [formGroup]="formEdit" (ngSubmit)="modificarParqueadero()" autocomplete="off">
+            <div class="modal-body">
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mt2">
+                                <label for="name">Nombre del Parqueadero</label>
+                                <input type="text" id="name" class="form-control" formControlName="nombreP">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mt2">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" id="direccion" class="form-control" formControlName="direccion">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group mt2">
+                                <label for="correo">Correo</label>
+                                <input type="email" id="correo" class="form-control" formControlName="correo">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mt2">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" id="tel" class="form-control" formControlName="telefono">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mt2">
+                                <label for="cupos">Cupos Disponibles</label>
+                                <input type="text" id="cupos" class="form-control" formControlName="cupos">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mt2">
+                                <label for="precio">Precio</label>
+                                <input type="text" id="precio" class="form-control" formControlName="precio">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-group mt2">
+                                    <label for="precio">Dueño</label>
+                                    <input type="text" id="precio" class="form-control" formControlName="dueno">
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-primary btn-block">Modificar
+                    Parqueadero</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,63 +1,73 @@
 <div class="mapa" style="margin-top: 76px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0762328287346!2d-75.53051628588618!3d10.415520168601121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f7daf355b19%3A0x153e23e9b662f346!2sCENTRO%20COMERCIAL%20CARIBE%20PLAZA!5e0!3m2!1ses!2sco!4v1571345559011!5m2!1ses!2sco"
-                width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0762328287346!2d-75.53051628588618!3d10.415520168601121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f7daf355b19%3A0x153e23e9b662f346!2sCENTRO%20COMERCIAL%20CARIBE%20PLAZA!5e0!3m2!1ses!2sco!4v1571345559011!5m2!1ses!2sco"
+        width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 </div>
 <div class="gradient row mt-5 p-3">
-        <div class="col-md-5">
-                <div class="card shadow">
+    <div class="col-md-5">
+        <div class="card shadow">
 
-                        <div class="card-header text-center">
-                                Reservar Cupo
+            <div class="card-header text-center">
+                Reservar Cupo
+            </div>
+            <form [formGroup]="formReserva" (ngSubmit)="Reservar()" autocomplete="off">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mt-2">
+                                <label for="name">Seleccione el parqueadero</label>
+                                <select id="name" formControlName="nombreP" class="form-control">
+                                    <option *ngFor="let pa of listParqueaderos" value="{{pa.idParqueadero}}">
+                                        {{pa.nombreP}}</option>
+                                </select>
+                            </div>
                         </div>
-                        <form [formGroup]="formReserva" (ngSubmit)="Reservar()" autocomplete="off">
-                                <div class="card-body">
-                                        <div class="row">
-                                                <div class="col-md-12">
-                                                        <div class="form-group mt-2">
-                                                                <label for="name">Seleccione el parqueadero</label>
-                                                                <select id="name" formControlName="nombreP" class="form-control">
-                                                                        <option *ngFor="let pa of listParqueaderos" value="{{pa.nombreP}}">{{pa.nombreP}}</option>
-                                                                </select>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="form-group mt-2">
-                                                                <label for="user">Tiempo de Reseva</label>
-                                                                <input type="text" id="tiempo" class="form-control"
-                                                                        formControlName="tiempoReserva">
-                                                        </div>
-                                                </div>
+                        <div class="col-md-12">
+                            <div class="form-group mt-2">
+                                <label for="user">Tiempo de Reseva</label>
+                                <select class="form-control" formControlName="tiempoReserva">
+                                    <option value="10">10 minutos</option>
+                                    <option value="20">20 minutos</option>
+                                    <option value="30">30 minutos</option>
+                                    <option value="40">40 minutos</option>
+                                    <option value="50">50 minutos</option>
+                                    <option value="60">60 minutos</option>
+                                </select>
+                            </div>
+                        </div>
 
-                                        </div>
-                                </div>
-                                <div class="card-footer">
-                                        <button class="btn btn-primary btn-block">Reservar</button>
-                                </div>
-                        </form>
-
+                    </div>
                 </div>
-        </div>
-
-        <div class="col-md-7">
-                <div class="card p-2">
-                        <table class="table table-bordered">
-                                <thead class="thead-dark">
-                                    <th>Nombre</th>
-                                    <th>Dirección</th>
-                                    <th>Cupos</th>
-                                    <th>Precio</th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let p of listParqueaderos">
-                                        <td>{{ p.nombreP }}</td>
-                                        <td>{{ p.direccion }}</td>
-                                        <td>{{ p.cupos }}</td>
-                                        <td>${{ p.precio }} / hora</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block">Reservar</button>
                 </div>
+            </form>
 
         </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="card p-2">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Cupos</th>
+                    <th>Precio</th>
+                    <th>Telefono pechera</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of listParqueaderos">
+                        <td>{{ p.nombreP }}</td>
+                        <td>{{ p.direccion }}</td>
+                        <td>{{ p.cupos }}</td>
+                        <td>${{ p.precio }} / hora</td>
+                        <td>{{ p.telefono }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 
 </div>

@@ -1,6 +1,6 @@
 export class Parqueadero {
 
-    constructor(idParqueadero = '', nombreP = '', direccion = '',correo = '',telefono = '', cupos = '' , precio = '') {
+    constructor(dueno = '' ,idParqueadero = '', nombreP = '', direccion = '',correo = '',telefono = '', cupos = '' , precio = '') {
         this.idParqueadero = idParqueadero;
         this.nombreP = nombreP;
         this.direccion = direccion;
@@ -8,6 +8,7 @@ export class Parqueadero {
         this.telefono = telefono;
         this.cupos = cupos;
         this.precio = precio;
+        this.dueno = dueno;
 
     }
 
@@ -19,6 +20,6 @@ export class Parqueadero {
     telefono: string;
     cupos: string;
     precio: string;
-    
+    dueno: string;
 
 }
